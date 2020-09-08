@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from authentication.urls import urlpatterns as authurls
 
 urlpatterns = [
-    path('twitterclone/', include('twitterclone.urls')),
-    path('', Home.as_view, name='home'),
-    path('', views.home, name='home'),
+
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += authurls
+#
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_root)
+
