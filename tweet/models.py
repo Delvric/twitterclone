@@ -8,3 +8,7 @@ class TwitItem(models.Model):
 
     def __str__(self):
         return self.body
+
+
+def TweetModel():
+    return None
